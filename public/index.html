@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>ws-bbs</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=0.70">
+	<link href="css/forum.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+<style>
+</style>
+</head>
+
+<body>
+<br><br>
+	<div id="currBoard" class="flex-wrap j-center">
+	</div>
+	<div class="flex center w-100">
+		<button id="return" class="btn" onClick="cmd.getThreads(0)">Back</button> <button id="threadBtn" class="btn hidden"
+		 onClick="threadFrm()">Start a Thread</button>
+		<button id="messageBtn" class="btn hidden" onClick="messageFrm()">Reply to Thread</button>
+	</div>
+	<div class="flex center w-100" style=" margin-top:10px;">
+
+		<form action="/" method="post" enctype="multipart/form-data" id="form-id" class="hidden">
+			<p><input id="file-id" class="btn" type="file" name="uploadedFile" />
+				<input type="button" class="btn" value="Upload" id="upload-button-id" /></p>
+
+			<div id="threadSubmit" class="hidden" style="margin-bottom:10px; max-width:90%;">
+				<input id="threadSubj" class="input-c" type="text" value="" placeholder="Enter a subject." />
+				<input id="threadName" class="input-c" type="text" value="" placeholder="Enter a name." />
+				<textarea id="threadMessage" class="input-c" value="" placeholder="Enter a message." style="height:200px;" name="thread_message"></textarea>
+				<div class="flex center" style="margin-top:7.5px;">
+					<button class="btn" onClick="emitThread(0)" style="margin-right:7.5px;">Submit</button> <button class="btn"
+					 onClick="threadFrm()" style="margin-right:7.5px;">Close</button>		
+	</div>
+			</div>
+
+			<div id="messageSubmit" class="hidden" style="margin-bottom:10px; max-width:90%;">
+				<input id="messageName" class="input-c" type="text" value="" placeholder="Enter a name." />
+				<textarea id="messageVal" class="input-c" value="" placeholder="Enter a message." style="height:200px;" name="message"></textarea>
+				<div class="flex center" style="margin-top:7.5px;">
+					<button class="btn" onClick="emitPost(0, thread)" style="margin-right:7.5px;">Submit</button> <button class="btn"
+					 onClick="messageFrm()" style="margin-right:7.5px;">Close</button>
+				</div>
+			</div>
+
+	</div>
+<br>
+	<div id="posts-container" class="flex-wrap">
+	</div>
+
+	<br>
+
+	<div id="test-container" class="w-100">
+	</div>
+
+
+	<br><br><br><br>
+
+	
+</body>
+<script src="main.js"></script>
+<script src="fileUpload.js"></script>
+
+</html>
